@@ -1,2 +1,3 @@
-瀑布流<br/>
-![alt Home](https://raw.githubusercontent.com/singer1026/CollectionLayoutDemo/master/Layout.gif)
+LICENSE MIT
+预览图：
+![alt Home](https://raw.githubusercontent.com/singer1026/TableViewCustomCellDemo/master/demo.gif)
