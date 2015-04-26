@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MyImageView.h"
+
+@protocol BaseCellDelegate <NSObject>
+
+-(void)imageClickFor:(MyImageView *)imageView;
+
+@end
+
+
+@class BaseCellDelegate;
 @interface BaseCell : UITableViewCell
 @property (nonatomic , strong) NSDictionary *imageDict;
+@property (nonatomic , weak) id<BaseCellDelegate> baseCellDelegate;
 @end

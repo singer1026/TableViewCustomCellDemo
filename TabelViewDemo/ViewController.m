@@ -15,7 +15,7 @@
 #import "MyCell4.h"
 #import "UIImageView+WebCache.h"
 
-@interface ViewController ()
+@interface ViewController ()<BaseCellDelegate>
 @property (nonatomic, strong) NSMutableArray *shops;
 @property (nonatomic , assign) BOOL flag;
 @property (nonatomic , assign) BOOL flag1;
@@ -107,7 +107,8 @@ static NSString *ID4 = @"cell4";
     if (indexPath.row == 0) {
         cellid = ID1;
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    BaseCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    
     CGFloat h = 100.0f;
    
    if([cell isKindOfClass:[MyCell2 class]] || [cell isKindOfClass:[MyCell4 class]]){
@@ -191,9 +192,12 @@ static NSString *ID4 = @"cell4";
         cell4.downImage.shop = shopc;
     }
     cell.imageDict = dict;
-
+    cell.baseCellDelegate = self;
     
     return cell;
 }
 
+-(void)imageClickFor:(MyImageView *)imageView{
+    NSLog(@"——————————————%@",imageView.shop.price);
+}
 @end
