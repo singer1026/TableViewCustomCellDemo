@@ -17,8 +17,6 @@
 
 @interface ViewController ()<BaseCellDelegate>
 @property (nonatomic, strong) NSMutableArray *shops;
-@property (nonatomic , assign) BOOL flag;
-@property (nonatomic , assign) BOOL flag1;
 
 @property (nonatomic, strong) NSArray *dataList;
 
@@ -48,7 +46,6 @@ static NSString *ID4 = @"cell4";
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCell3" bundle:nil] forCellReuseIdentifier:ID3];
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCell4" bundle:nil] forCellReuseIdentifier:ID4];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _flag1 = YES;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -83,7 +80,6 @@ static NSString *ID4 = @"cell4";
                 }
                 j=j+1;
                 if (j>3) {
-                    
                     j=1;
                 }
             }
@@ -100,12 +96,11 @@ static NSString *ID4 = @"cell4";
         if (indexPath.row%2 == 0) {
             cellid = ID3;
         }else{
-            if(_flag){
+            if(indexPath.row%4 == 1){
                 cellid = ID2;
-                _flag = !_flag;
-            }else if (!_flag){
+            }
+            else if(indexPath.row%4 == 3){
                 cellid = ID4;
-                _flag = !_flag;
             }
         }
 
@@ -136,12 +131,11 @@ static NSString *ID4 = @"cell4";
         if (indexPath.row%2 == 0) {
             cellid = ID3;
         }else{
-            if(_flag1){
+            if(indexPath.row%4 == 1){
                 cellid = ID2;
-                _flag1 = !_flag1;
-            }else if (!_flag1){
+            }
+            else if(indexPath.row%4 == 3){
                 cellid = ID4;
-                _flag1 = !_flag1;
             }
         }
     }else{
