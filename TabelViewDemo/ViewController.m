@@ -47,6 +47,7 @@ static NSString *ID4 = @"cell4";
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCell2" bundle:nil] forCellReuseIdentifier:ID2];
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCell3" bundle:nil] forCellReuseIdentifier:ID3];
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCell4" bundle:nil] forCellReuseIdentifier:ID4];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -107,17 +108,11 @@ static NSString *ID4 = @"cell4";
         cellid = ID1;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
-    CGFloat h = 100;
+    CGFloat h = 100.0f;
    
-    if ([cell isKindOfClass:[MyCell1 class]]) {
-        
-    }else if([cell isKindOfClass:[MyCell2 class]]){
+   if([cell isKindOfClass:[MyCell2 class]] || [cell isKindOfClass:[MyCell4 class]]){
         h=200.0f;
         
-    }else if ([cell isKindOfClass:[MyCell3 class]]){
-        h=100.0f;
-    }else if ([cell isKindOfClass:[MyCell4 class]]){
-        h=200.0f;
     }
     return h;
 }
@@ -196,7 +191,7 @@ static NSString *ID4 = @"cell4";
         cell4.downImage.shop = shopc;
     }
     cell.imageDict = dict;
-    //覆盖数据
+
     
     return cell;
 }

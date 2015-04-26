@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,16 +14,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0z-WY-j3l" customClass="MyImageView">
-                        <rect key="frame" x="8" y="13" width="194" height="180"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O0z-WY-j3l" customClass="MyImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="213" height="199"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fhx-DU-oGT" customClass="MyImageView">
-                        <rect key="frame" x="218" y="13" width="93" height="80"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fhx-DU-oGT" customClass="MyImageView">
+                        <rect key="frame" x="213" y="0.0" width="107" height="100"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-l9-vDV" customClass="MyImageView">
-                        <rect key="frame" x="220" y="111" width="93" height="80"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-l9-vDV" customClass="MyImageView">
+                        <rect key="frame" x="213" y="100" width="107" height="99"/>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Fhx-DU-oGT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0ms-Sn-zqk"/>
+                    <constraint firstAttribute="bottom" secondItem="O0z-WY-j3l" secondAttribute="bottom" id="EcF-Pk-2og"/>
+                    <constraint firstItem="O0z-WY-j3l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FYn-cQ-OfN"/>
+                    <constraint firstItem="0rU-l9-vDV" firstAttribute="height" secondItem="Fhx-DU-oGT" secondAttribute="height" id="NaY-Yg-dNE"/>
+                    <constraint firstItem="Fhx-DU-oGT" firstAttribute="leading" secondItem="O0z-WY-j3l" secondAttribute="trailing" id="TF2-vF-uru"/>
+                    <constraint firstAttribute="trailing" secondItem="Fhx-DU-oGT" secondAttribute="trailing" id="VRt-ci-s7n"/>
+                    <constraint firstItem="0rU-l9-vDV" firstAttribute="top" secondItem="Fhx-DU-oGT" secondAttribute="bottom" id="VeT-Io-ucT"/>
+                    <constraint firstItem="0rU-l9-vDV" firstAttribute="width" secondItem="Fhx-DU-oGT" secondAttribute="width" id="XM3-DJ-Wz7"/>
+                    <constraint firstItem="O0z-WY-j3l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eNn-D8-oZQ"/>
+                    <constraint firstAttribute="trailing" secondItem="O0z-WY-j3l" secondAttribute="trailing" multiplier="3/2" id="iCV-bh-40e"/>
+                    <constraint firstItem="0rU-l9-vDV" firstAttribute="leading" secondItem="O0z-WY-j3l" secondAttribute="trailing" id="oV8-YO-Mjo"/>
+                    <constraint firstAttribute="bottom" secondItem="Fhx-DU-oGT" secondAttribute="bottom" multiplier="2/1" id="rbD-gp-r9L"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="bigImage" destination="O0z-WY-j3l" id="xq3-ea-6ar"/>

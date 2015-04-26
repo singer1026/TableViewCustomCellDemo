@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,16 +14,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uk8-HV-YPf" customClass="MyImageView">
-                        <rect key="frame" x="232" y="8" width="80" height="80"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uk8-HV-YPf" userLabel="imageLeft" customClass="MyImageView">
+                        <rect key="frame" x="213" y="0.0" width="107" height="99"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEB-dP-N6W" customClass="MyImageView">
-                        <rect key="frame" x="120" y="8" width="80" height="80"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PUI-hd-Csv" userLabel="imageRight" customClass="MyImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="107" height="99"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUI-hd-Csv" customClass="MyImageView">
-                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uEB-dP-N6W" userLabel="imageMid" customClass="MyImageView">
+                        <rect key="frame" x="107" y="0.0" width="106" height="99"/>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="PUI-hd-Csv" secondAttribute="centerY" id="0QS-vo-IDh"/>
+                    <constraint firstItem="PUI-hd-Csv" firstAttribute="width" secondItem="Uk8-HV-YPf" secondAttribute="width" id="21c-hR-jKT"/>
+                    <constraint firstAttribute="trailing" secondItem="PUI-hd-Csv" secondAttribute="trailing" multiplier="3/1" id="AXz-FN-XTS"/>
+                    <constraint firstAttribute="centerY" secondItem="uEB-dP-N6W" secondAttribute="centerY" id="C0K-ct-KPZ"/>
+                    <constraint firstAttribute="centerY" secondItem="Uk8-HV-YPf" secondAttribute="centerY" id="GaU-gq-IOg"/>
+                    <constraint firstItem="PUI-hd-Csv" firstAttribute="height" secondItem="uEB-dP-N6W" secondAttribute="height" id="O2H-8D-ogw"/>
+                    <constraint firstItem="PUI-hd-Csv" firstAttribute="width" secondItem="uEB-dP-N6W" secondAttribute="width" id="SNb-1M-l62"/>
+                    <constraint firstItem="PUI-hd-Csv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ZNQ-2S-Esq"/>
+                    <constraint firstItem="PUI-hd-Csv" firstAttribute="height" secondItem="Uk8-HV-YPf" secondAttribute="height" id="anr-eK-0Yx"/>
+                    <constraint firstItem="Uk8-HV-YPf" firstAttribute="leading" secondItem="uEB-dP-N6W" secondAttribute="trailing" id="bO2-Pj-v13"/>
+                    <constraint firstAttribute="bottom" secondItem="PUI-hd-Csv" secondAttribute="bottom" id="cNd-3h-R2l"/>
+                    <constraint firstItem="uEB-dP-N6W" firstAttribute="leading" secondItem="PUI-hd-Csv" secondAttribute="trailing" id="fvo-S6-a90"/>
+                    <constraint firstItem="PUI-hd-Csv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="y73-qZ-17A"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageLeft" destination="PUI-hd-Csv" id="m70-5v-S9j"/>
