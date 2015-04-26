@@ -48,6 +48,7 @@ static NSString *ID4 = @"cell4";
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCell3" bundle:nil] forCellReuseIdentifier:ID3];
     [self.tableView registerNib:[UINib nibWithNibName:@"MyCell4" bundle:nil] forCellReuseIdentifier:ID4];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _flag1 = YES;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -95,18 +96,23 @@ static NSString *ID4 = @"cell4";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellid = ID1;
-    if(indexPath.row !=0  && indexPath.row%2 == 0){
-        cellid = ID3;
-    }else if(_flag){
-        cellid = ID2;
-        _flag = NO;
-    }else if (!_flag){
-        cellid = ID4;
-        _flag = YES;
-    }
-    if (indexPath.row == 0) {
+    if (indexPath.row!=0) {
+        if (indexPath.row%2 == 0) {
+            cellid = ID3;
+        }else{
+            if(_flag){
+                cellid = ID2;
+                _flag = !_flag;
+            }else if (!_flag){
+                cellid = ID4;
+                _flag = !_flag;
+            }
+        }
+
+    }else{
         cellid = ID1;
     }
+    
     BaseCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
     
     CGFloat h = 100.0f;
@@ -126,18 +132,22 @@ static NSString *ID4 = @"cell4";
     NSString *cellid = ID1;
     //拿到一个标示符先去缓存池中查找对应的cell
     BaseCell *cell = nil;
-    if(indexPath.row !=0  && indexPath.row%2 == 0){
-        cellid = ID3;
-    }else if(indexPath.row>0 && _flag1){
-        cellid = ID2;
-        _flag1 = NO;
-    }else if (indexPath.row>0 && !_flag1){
-        cellid = ID4;
-        _flag1 = YES;
-    }
-    if (indexPath.row == 0) {
+    if (indexPath.row != 0 ) {
+        if (indexPath.row%2 == 0) {
+            cellid = ID3;
+        }else{
+            if(_flag1){
+                cellid = ID2;
+                _flag1 = !_flag1;
+            }else if (!_flag1){
+                cellid = ID4;
+                _flag1 = !_flag1;
+            }
+        }
+    }else{
         cellid = ID1;
     }
+  
     cell = [tableView dequeueReusableCellWithIdentifier:cellid];
 
     NSDictionary *dict = _dataList[indexPath.row];
